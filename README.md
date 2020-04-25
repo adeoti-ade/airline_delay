@@ -1,9 +1,6 @@
 # airline_delay
 This repository consists a personal project that classifies if a flight will get delayed based on some features. The project uses a data from Kaggle to build a machine learning process
 
-# fake-news-classifier
-This is capstone project required by Udacity to pass the Data Science NanoDegree. The project is a classifier that aims to classify an article as either fake or real based on the title of the article and the article content. The project follows the data CRISP-DM method
-
 
 ### Table of Content8
 
