@@ -63,9 +63,7 @@ To provide solution to the stated problem, the following questions will be asked
 
 
 ## Metric <a name="metric"></a>
-The metrics used to measure this project is the Precision-Recall ROC Curve. Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. In information retrieval, precision is a measure of result relevancy, while recall is a measure of how many truly relevant results are returned.
-
-The precision-recall curve shows the tradeoff between precision and recall for different threshold. A high area under the curve represents both high recall and high precision, where high precision relates to a low false positive rate, and high recall relates to a low false negative rate. High scores for both show that the classifier is returning accurate results (high precision), as well as returning a majority of all positive results (high recall).
+The metrics used to measure this project is the Average Precision Score . AP summarizes a precision-recall curve as the weighted mean of precisions achieved at each threshold, with the increase in recall from the previous threshold used as the weight
 
 # Analysis <a name="analysis"></a>
 
@@ -73,15 +71,25 @@ The precision-recall curve shows the tradeoff between precision and recall for d
 
 The data shows that there are 100000 observations of flights recorded which also implies that there are no missing observations. using bar chart, the data shows the count of the delayed and non-delayed flights. It shows that that about 19% of the total flights were delayed for more than 15mins, while 81% were not cancelled. 
 
-# Methodology <a name="methodology"></a>
+# Implementation <a name="implement"></a>
+We split the user set into training (80%) and test (20%), and create a pipeline that assembles the features selected above, then runs a machine learning model; our problem is a classification one, so we implemented the following algorithms:
+
+1. Logistic regression
+2. Decision tree
+3. Random forest
+4. Gradient boosted tree
+5. Naive Bayes
+6. KNeighborsClassifier
 
 ## Data Preprocessing <a name="preprocessing"></a>
 
-The data used contained no missing values, hence the was no need for hanling missing values. However, some columns were reported in a way that may not provide enouch information, more features were extracted from the existing features.
+The data used contained no missing values, hence the was no need for hanling missing values. However, some columns were reported in a way that may not provide enough information, more features were extracted from the existing features.
 
 ## Conclusion <a name="conclusion"></a>
 
-Using the Decision tree to build a classifier which tried to classify the target variable using the features. The model had an overal accuracy of 0.81 while it has a precision of 0.82 for non-delayed flights and a precision of 0.60 for delayed flights. The recall which is the measure of how many truly relevant results are returned expecially when classes are imbalanced over the observations was shown to be 0.99 for non-delayed classes and 0.05 for delayed class. The model seems accurate overall and predict non-delay flights well. However, it may not accurately predict the non-delay well. A good solution to this problem would be to increase the amount of flights that were delayed.
+The project explored how some flight features relate with the delay of such flights. The revealed that Southwest Airlines has the highest proportion of delay. The project also selects RandomForestClassifier as the best algorithm using the average precision score as an evaluation metric.
+
+The complete discovery of this project can be found at [here](https://medium.com/@adeotiadegboyega/will-my-flight-be-delayed-or-not-dfb440c12b44?sk=e3311e52f2371f1f87fc97a3e7a84141)
 
 
 ## References <a name="reference"></a>
